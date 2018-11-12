@@ -57,7 +57,9 @@ def _process_microseconds(dt_strftime):
 
 def _silk_date_time(dt):
     today = timezone.now().date()
-    if dt.date() == today:
+    if isinstance(dt, str) or dt == '':
+        return 0
+    elif dt.date() == today:
         dt_strftime = dt.strftime('%H:%M:%S.%f')
         return _process_microseconds(dt_strftime)
     else:

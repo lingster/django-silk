@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^$', SummaryView.as_view(), name='summary'),
     url(r'^requests/$', RequestsView.as_view(), name='requests'),
     url(
-        r'^request/(?P<request_id>[a-zA-Z0-9\-]+)/$',
+        r'^request/(?P<request_id>[a-zA-Z0-9\-]*)/$',
         RequestView.as_view(),
         name='request_detail'
     ),
