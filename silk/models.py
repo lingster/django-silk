@@ -71,7 +71,7 @@ class Request(models.Model):
     meta_num_queries = IntegerField(null=True, blank=True)
     meta_time_spent_queries = FloatField(null=True, blank=True)
     pyprofile = TextField(blank=True, default='')
-    prof_file = FileField(max_length=300, blank=True, storage=silk_storage)
+    prof_file = FileField(max_length=300, blank=True, storage=silk_storage, null=True)
 
     # Useful method to create shortened copies of strings without losing start and end context
     # Used to ensure path and view_name don't exceed 190 characters
